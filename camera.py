@@ -7,7 +7,7 @@ camera.resolution = (1920,1080)
 
 camera.framerate = 30
 camera.start_preview()
-camera.annotate_text = "Who wants to go eat"
+camera.annotate_text = "YOOOOOOO"
 camera.start_recording('/home/pi/Documents/vid1.h264')
 
 sleep(5)
