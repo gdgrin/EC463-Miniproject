@@ -6,7 +6,7 @@ i = 0
 j = 0 
  
 #create VideoCapture object and read from video file
-cap = cv2.VideoCapture('cars.mp4')
+cap = cv2.VideoCapture('data1.h264')
 #use trained cars XML classifiers
 car_cascade = cv2.CascadeClassifier('cars.xml')
 
