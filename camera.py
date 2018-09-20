@@ -7,8 +7,8 @@ camera.resolution = (1920,1080)
 
 camera.framerate = 30
 camera.start_preview()
-camera.annotate_text = "PHOTONICS WINDOW"
-camera.start_recording('/home/pi/Documents/EC463-Miniproject/data4.h264')
+#camera.annotate_text = "PHOTONICS WINDOW"
+camera.start_recording('/home/pi/Documents/EC463-Miniproject/adam2.h264')
 
 sleep(5)
 

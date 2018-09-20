@@ -4,14 +4,15 @@ import cv2
 import numpy as np
 i = 0
 j = 0 
- 
+k = 0
 #create VideoCapture object and read from video file
-cap = cv2.VideoCapture('data1.h264')
+cap = cv2.VideoCapture('data3.mp4')
 #use trained cars XML classifiers
 car_cascade = cv2.CascadeClassifier('cars.xml')
 
 #read until video is completed
 while True:
+    k = 0
     #capture frame by frame
     ret, frame = cap.read()
     #convert video into gray scale of each frames
@@ -19,14 +20,16 @@ while True:
 
     #detect cars in the video
     cars = car_cascade.detectMultiScale(gray, 1.1, 3)
-    j = i
+
     #to draw arectangle in each cars 
     for (x,y,w,h) in cars:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
-        i  = 1 +i
-    cv2.putText(frame,'Car number %d ' % (i-j) ,(10,500),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),2)  
-   
-
+        k  = 1 + k
+    if k>j:
+        i=k-j+i
+    cv2.putText(frame,'Car number %d ' % i ,(10,500),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),2)  
+    j=k
+	
     #display the resulting frame
     cv2.imshow('video', frame)
 
